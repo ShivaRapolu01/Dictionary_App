@@ -4,14 +4,15 @@ infoText=content.querySelector(".info-text"),
 contentText=document.querySelector(".content"),
 Synonym=document.querySelector("#synonym div"),
 SynonymDiv=document.querySelector("#synonym"),
-volumeButton=document.querySelector("#phenotic i");
-
+volumeButton=document.querySelector("#phenotic i"),
+removeIcon=document.querySelector(".search-box span");
 let audio;
 function data(result,word){
+    // console.log(result);
     if(result.title=='No Definitions Found'){
         infoText.innerText=`Can't find meaning of "${word}", please search for another word `
     }else{
-        console.log(result);
+        // console.log(result);
        content.classList.add("active");
        let buf=result[0].meanings[0]; 
        document.querySelector(".search-content h3").innerText=result[0].word; 
@@ -49,22 +50,19 @@ function CheckError(response) {
   }
 function search(word){
 
-    
-    infoText.style.color="black"; 
-    infoText.innerText=`Searching the meaning of "${word}"`;
-    let url=`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
-    fetch(url).then(res=>CheckError(res)).then(res=>{searchInput.value=word ,data(res,word)});
+    fetchApi(word);
 }
 
 function fetchApi(word){
     infoText.style.color="black"; 
+    content.classList.remove("active");
    infoText.innerText=`Searching the meaning of "${word}"`;
    let url=`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-   fetch(url).then(res=>res.json()).then(result=>data(result,word));
+   fetch(url).then(res=>CheckError(res)).then(result=>{searchInput.value=word ,data(result,word)});
 }
 searchInput.addEventListener("keyup",e=>{
     if(e.key==="Enter" && e.target.value){
-        console.log(e.target.value); 
+        // console.log(e.target.value); 
         fetchApi(e.target.value);
     }
  
@@ -75,7 +73,7 @@ volumeButton.addEventListener("click",()=>{
     setTimeout(() =>{
         volumeButton.style.color = "#999";
     }, 800);
-    console.log(audio.play());
+    // console.log(audio.play());
    
 
 // In browsers that don’t yet support this functionality,
@@ -88,4 +86,11 @@ if (audio.play() !== undefined) {
     // Automatic playback failed.
   });
 }
+})
+
+removeIcon.addEventListener("click",()=>{
+    searchInput.value="";
+    searchInput.focus();
+    content.classList.remove("active");
+    infoText.innerText="Type any existing word and press enter to get meaning, example, synonyms, etc.";
 })

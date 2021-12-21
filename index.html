@@ -7,7 +7,7 @@
     <title>Dictionary App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -17,8 +17,9 @@
         </div>
         <div id="search_container">
          <div class="search-box">
-            <input type="search" placeholder="Search a word" required spellcheck="false">
+            <input id="search" type="search" placeholder="Search a word" required spellcheck="false">
             <i class="fas fa-search"></i>
+            <span class="material-icons">close</span>
          </div>
             <p class="info-text">Type any existing word and press enter to get meaning, example, synonyms, etc.</p>
         </div>
