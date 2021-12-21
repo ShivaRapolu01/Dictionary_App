@@ -40,16 +40,24 @@ function data(result,word){
     
 }
 
-function CheckError(response) {
+function CheckError(response,word) {
     if (response.status >= 200 && response.status <= 299) {
       return response.json();
     } else {
-        window.alert("can't search for this word bcz the api doesn't support it");
-    //   throw Error(response.statusText);
+        let input= new String(word);
+
+        
+        for(let i=0;i<input.length;++i){
+            if(input[i].charCodeAt(0) - 'a'.charCodeAt(0)<0 || input[i].charCodeAt(0) - 'a'.charCodeAt(0)>25){
+                window.alert("can't search for this word because the api doesn't support multiple words");
+                return response.json(); 
+            }
+        } 
+        return response.json();
+      //   throw Error(response.statusText);
     }
   }
 function search(word){
-
     fetchApi(word);
 }
 
@@ -58,7 +66,7 @@ function fetchApi(word){
     content.classList.remove("active");
    infoText.innerText=`Searching the meaning of "${word}"`;
    let url=`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
-   fetch(url).then(res=>CheckError(res)).then(result=>{searchInput.value=word ,data(result,word)});
+   fetch(url).then(res=>CheckError(res,word)).then(result=>{searchInput.value=word ,data(result,word)});
 }
 searchInput.addEventListener("keyup",e=>{
     if(e.key==="Enter" && e.target.value){
