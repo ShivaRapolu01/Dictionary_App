@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0; 
+    padding:0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    margin:0; 
+    background-color:rgb(77,89,251);
+    min-width: 100vw; 
+    min-height: 100vh;
+    display:flex; 
+    justify-content: center;
+    align-items:center; 
+    /* overflow: hidden; */
+}
+
+.center{
+    padding:10px 30px 30px; 
+    background-color: #FFFFFF;
+    border-radius: 6px;
+}
+h3{
+    font-size:1rem;
+}
+#title{
+    text-align: center;
+    font-weight: 300;
+    padding:20px 0; 
+}
+#search_container{
+    position: relative;
+}
+
+#search_container input{
+    
+    outline:none; 
+    border:1px solid rgb(153,155,166);
+    border-radius: 5px;
+    padding:10px 10px;
+    padding-left: 40px;
+    width:100%;
+
+}
+#search_container input:focus{
+    border:2px solid rgb(77,89,251);
+
+}
+#search_container input:focus~i{
+    color:rgb(77,89,251);
+}
+#search_container i{
+    padding-left:10px; 
+    position:absolute; 
+    left:2%; 
+    top:50%; 
+    transform:translateY(-50%);
+}
+
+#content #phenotic{
+    display:flex; 
+    position:relative;
+    padding:20px 0;  
+}
+
+.search-content~i{
+   cursor:pointer; 
+}
+
+#content #phenotic i{
+ position:absolute; 
+ right:0; 
+ top:50%; 
+ padding:10px 0; 
+ transform:translateY(-50%);
+}
+
+.bor-bot{
+    border-bottom:1px solid rgb(126,126,126); 
+    padding:7px 3px; 
+    /* border-left:2px solid rgb(77,89,251); */
+    /* border-radius:3px;  */
+}
+#synonym{
+    padding:10px 0; 
+}
+
+#meaning h3,#meaning p{
+    padding:0; 
+    margin:2px 0; 
+}
+.small-content{
+    font-size:.90rem; 
+    color:rgb(126,126,126); 
+}
