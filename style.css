@@ -25,16 +25,27 @@ body{
     width:30vw;
     max-height:75vh;
     /* min-height:330px; */
-    /* overflow:hidden;  */
+    overflow-y:auto; 
+}
+
+@media screen and (max-width:500px){
+    .center{
+        min-width:90vw; 
+        min-height:70vh;
+    }
 }
 h3{
     font-size:1rem;
+}
+h2{
+    font-size:1.8rem;
 }
 #title{
     text-align: center;
     font-weight: 300;
     padding:20px 40px; 
 }
+
 .search-box{
     position: relative;
 }
@@ -132,21 +143,23 @@ h3{
 
 .content{
    display:none; 
+
 }
 .center.active .content {
     max-height:330px;
     display:block;
-    overflow-y:auto;
+    overflow-y:none;
 }
 /* .center.active .content::-webkit-scrollbar{
     width:2px;
 } */
 .info-text{
     padding:0 10px; 
-    width:23rem;
+    width:100%;
     font-size:.78rem;
     margin-top:10px;
-    color:rgb(126,126,126)  
+    color:rgb(100, 101, 102);
+    font-weight: bold; 
     /* flex-wrap: wrap; */
 }
 
