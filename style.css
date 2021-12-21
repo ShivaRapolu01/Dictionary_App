@@ -21,6 +21,10 @@ body{
     padding:10px 30px 30px; 
     background-color: #FFFFFF;
     border-radius: 6px;
+     min-width: 25rem;
+    width:30vw;
+    max-height:75vh;
+    overflow:hidden; 
 }
 h3{
     font-size:1rem;
@@ -28,9 +32,9 @@ h3{
 #title{
     text-align: center;
     font-weight: 300;
-    padding:20px 0; 
+    padding:20px 40px; 
 }
-#search_container{
+.search-box{
     position: relative;
 }
 
@@ -44,13 +48,7 @@ h3{
     width:100%;
 
 }
-#search_container input:focus{
-    border:2px solid rgb(77,89,251);
 
-}
-#search_container input:focus~i{
-    color:rgb(77,89,251);
-}
 #search_container i{
     padding-left:10px; 
     position:absolute; 
@@ -58,8 +56,17 @@ h3{
     top:50%; 
     transform:translateY(-50%);
 }
+#search_container input:focus{
+    border:2px solid rgb(77,89,251);
 
-#content #phenotic{
+}
+#search_container input:focus~i{
+    color:rgb(77,89,251);
+}
+#search_container .info-text{
+    width:25rem;
+}
+.content #phenotic{
     display:flex; 
     position:relative;
     padding:20px 0;  
@@ -69,7 +76,7 @@ h3{
    cursor:pointer; 
 }
 
-#content #phenotic i{
+.content #phenotic i{
  position:absolute; 
  right:0; 
  top:50%; 
@@ -94,4 +101,27 @@ h3{
 .small-content{
     font-size:.90rem; 
     color:rgb(126,126,126); 
+}
+#synonym span{
+    text-decoration: underline;
+    cursor:pointer; 
+}
+
+.content{
+   display:none; 
+}
+.center.active .content {
+    display:block; 
+}
+.info-text{
+    padding:0 10px; 
+    width:23rem;
+    font-size:.78rem;
+    margin-top:10px;
+    color:rgb(126,126,126)  
+    /* flex-wrap: wrap; */
+}
+
+.center.active .info-text{
+    display:none; 
 }
