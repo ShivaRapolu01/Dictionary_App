@@ -26,6 +26,8 @@ body{
     max-height:75vh;
     /* min-height:330px; */
     overflow-y:auto; 
+    overflow-x:hidden;
+    transition:all 1s ease-in-out;
 }
 
 @media screen and (max-width:500px){
@@ -96,9 +98,9 @@ h2{
 #search_container input:focus~i{
     color:rgb(77,89,251);
 }
-#search_container .info-text{
+/* #search_container .info-text{
     width:25rem;
-}
+} */
 .content #phenotic{
     display:flex; 
     position:relative;
@@ -125,10 +127,12 @@ h2{
     /* border-radius:3px;  */
 }
 #synonym{
+    transition:all 1s ease-in-out;
     padding:10px 0; 
 }
 
 #meaning h3,#meaning p{
+    transition:all 1s ease-in-out;
     padding:0; 
     margin:2px 0; 
 }
@@ -142,6 +146,7 @@ h2{
 }
 
 .content{
+    transition:all 1s ease-in-out;
    display:none; 
 
 }
@@ -153,13 +158,14 @@ h2{
 /* .center.active .content::-webkit-scrollbar{
     width:2px;
 } */
-.info-text{
-    padding:0 10px; 
-    width:100%;
-    font-size:.78rem;
+#search_container p{
+    padding-right:30px; 
+    width:380px;
+    font-size:.7rem;
     margin-top:10px;
     color:rgb(100, 101, 102);
     font-weight: bold; 
+    overflow:hidden;
     /* flex-wrap: wrap; */
 }
 
