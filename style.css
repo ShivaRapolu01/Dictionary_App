@@ -172,7 +172,7 @@ h2{
     color:rgb(100, 101, 102);
     font-weight: bold; 
     overflow:hidden;
-    text-align: center;
+    /* text-align: center; */
     /* flex-wrap: wrap; */
 }
 
