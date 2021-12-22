@@ -36,6 +36,9 @@ body{
         min-height:70vh;
         overflow-x: hidden;
     }
+    .info-text{
+        width:20rem;
+    }
 }
 h3{
     font-size:1rem;
