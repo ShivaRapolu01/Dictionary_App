@@ -34,6 +34,7 @@ body{
     .center{
         min-width:90vw; 
         min-height:70vh;
+        overflow-x: hidden;
     }
 }
 h3{
