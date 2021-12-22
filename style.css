@@ -25,6 +25,7 @@ body{
     width:30vw;
     max-height:75vh;
     /* min-height:330px; */
+    overflow-x: hidden;
     overflow-y:auto; 
     transition:all 1s ease-in-out;
 }
@@ -39,6 +40,7 @@ body{
         padding:2em;
         width:80%;
     }
+
 }
 h3{
     font-size:1rem;
@@ -164,12 +166,13 @@ h2{
 } */
 #search_container p{
     padding-right:30px; 
-    width:380px;
+    width:90%;
     font-size:.7rem;
     margin-top:10px;
     color:rgb(100, 101, 102);
     font-weight: bold; 
     overflow:hidden;
+    text-align: center;
     /* flex-wrap: wrap; */
 }
 
