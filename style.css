@@ -26,7 +26,6 @@ body{
     max-height:75vh;
     /* min-height:330px; */
     overflow-y:auto; 
-    overflow-x:hidden;
     transition:all 1s ease-in-out;
 }
 
@@ -37,7 +36,8 @@ body{
         overflow-x: hidden;
     }
     .info-text{
-        width:20rem;
+        padding:2em;
+        width:80%;
     }
 }
 h3{
